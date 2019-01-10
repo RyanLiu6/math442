@@ -1,0 +1,147 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphics, rotating}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand\vec{\mathbf}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+
+\author{Ryan Liu}
+\title{MATH 442 Homework 1}
+\begin{document}
+
+\begin{center}
+{\huge MATH 442 \par}
+{\Large Homework  1  \par}
+{\normalsize Name: Ryan Zhuo Lun Liu \par}
+{\normalsize Student Number: 30328141 \par}
+\end{center}
+
+\begin{problem}
+Prove that $2^{2n} \geq n^4$ for all $n\geq4$. \\
+
+\underline{Base Case:} \\
+Let $S(n)$ be the statement that $2^{2n} \geq n^4$ for all $n\geq4$. \\
+$S(4)$ $= 2^{8} \geq 4^4 \rightarrow 256 \geq 256$ and this statement is true. \\
+
+\underline{Induction Step:} \\
+Suppose that $S(n)$ is true, prove that $S(n + 1)$ is true ie. $2^{2(n + 1)} \geq (n + 1)^4$ for all $ n \geq 4$. \\
+
+$2^{2(n + 1)} = 2^{2n + 2} = 4 * 2^{2n} \geq 4 * n^4 \geq (n + 1)^4 = n^4 + 4*n^3 + 6*n^2 + 4*n + 1$ \\
+
+The first inequality is true from the induction hypothesis, and the second inequality is true for $n \geq 4$. Hence, we can conclude that the statement $2^{2n} \geq n^4$ is true for all $n \geq 4$
+
+\end{problem}
+
+\begin{problem}
+Prove that $x-y$ divides $x^n-y^n$ for all $n\geq 1$. \\
+
+\underline{Base Case:} \\
+Let $S(n)$ be the statement that $x-y$ divides $x^n-y^n$ for all $n\geq 1$. \\
+$S(1)$ $= x - y$ divides $x^1 - y^1 \rightarrow \frac{x^1 - y^1}{x - y} = 1$ \\
+
+\underline{Induction Step:} \\
+Suppose that $S(n)$ is true for some $k \mid \ k \in \N$ for $1 \leq k \leq n$, ie $x - y$ divides $x^k - y^k$. Prove that $S(n + 1)$ is true ie. $x - y$ divides $x^{n + 1} - y^{n + 1}$ for all $n\geq 1$. \\
+
+$x^{n + 1} - y^{n + 1}$
+
+$= x*(x^n) - y*(y^n) \rightarrow (x + y - y)*x^n - (y + x - x)*y^n$
+
+$= (x + y)(x^n - y^n) - yx^n + xy^n$
+
+$= (x + y)(x^n - y^n) + xy(x^{n - 1} - y^{n -1})$ \\
+
+For the case where $n = 1$, $x^{n - 1} = y^{n - 1} = 0$ and the second term goes away, leaving us only with the first term.
+
+From the induction step, $x - y$ divides both terms and thus divides the summation of the two terms. Hence, $x - y$ divides $x^{n + 1} - y^{n +1}$
+
+\end{problem}
+
+\begin{problem}
+Prove that for every odd number $n\geq 1$, we have that $9$ divides $4^n+5^n$. \\
+
+\underline{Base Case:} \\
+Let $S(n)$ be the statement that for every odd number $n\geq 1$, we have that $9$ divides $4^n+5^n$.\\
+$S(1) = 9$ divides $4^1+5^1 = 9$. \\
+
+\underline{Induction Step:} \\
+Suppose that $S(n)$ is true for $k \in \N$ for $1 \leq k \leq n$, ie $9$ divides $4^n + 5^n$. Prove that $S(n + 1)$ is true ie $9$ divides $4^{n + 1} + 5^{n + 1}$ \\
+
+$4^{n+1} + 5^{n + 1}$
+
+$= (4 + 5 - 5)*4^n + (5 + 4 - 4)*5^n$
+
+$= (9)4^n + (9)5^n - (5)4^n - (4)5^n$
+
+$= (9)(4^n + 5^n) - (5*4)4^{n - 1} - (4*5)5^{n - 1}$
+
+$= (9)4^n + (9)5^n - (5*4)(4^{n - 1} + 5^{n - 1})$ \\
+
+From the induction step, we see that $9$ divides both terms and thus divides the summation of the two terms. We can say this for the second term as we can reduce it to a form of $(z)(4^{n - 3} + 5^{n - 3}$ and further more for $n - 5$ as well. According to the inductive hypothesis, there exists a number $k$ between $1$ and $n$ that $S(k)$ is true. Hence, $9$ divides $4^{n + 1} + 5^{n + 1}$ \\
+
+\end{problem}
+
+\begin{problem}
+Prove that for every positive integer $n$, one of the numbers $n, n+1, n+2, \ldots , 2n$ is the square of an integer. \\
+
+\underline{Base Case:} \\
+Let $S(n)$ be the statement that for every positive integer $n$, one of the numbers $n, n+1, n+2, \ldots , 2n$ is the square of an integer.\\
+$S(1) =$ the set from $1$ to $2$. In this case, $1$ is the square of $1$.\\
+
+\underline{Induction Step:} \\
+Suppose that $S(n)$ is true, prove for $S(n + 1)$ ie for every positive integer $n + 1$, one of the numbers $n + 1, n + 2, \ldots, 2(n + 1)$ is the square of an integer. \\
+
+If $n$ is not a square, then by the induction hypothesis, an integer between $n + 1$ and $2n$ must be a square of an integer and thus, a number between $n + 1$ and $2(n + 1)$ is the square of an integer. \\
+
+If $n$ is a square, then it must be of the form $n = x^2$ where $x \in \Z$. Using this, we want to show that $w = (x + 1)^2$ lies in between $n + 1$ and $2(n + 1)$ inclusively. \\
+
+Expanding $w = (x + 1)^2 = x^2 + 2x + 1 \rightarrow n + 2\sqrt{n} + 1$. From this, we can see that $w$ is clearly greater than $n + 1$ and for all $n \in \Z$, $n + 1 \geq 2\sqrt{n}$. $((n + 1)$ came from the fact that $2(n + 1) - (n + 1) = n + 1)$. \\
+
+Hence, for every positive integer $n$, one of the numbers $n, n+1, n+2, \ldots , 2n$ is the square of an integer.
+
+\end{problem}
+
+\begin{problem}
+A \emph{composition} of a natural number $n$ is an ordered list of positive integers whose sum is $n$. Let $c(n)$ be the number of compositions of $n$. Conjecture and then prove a formula for $c(n)$ for all $n\geq 1$. \\
+
+\underline{Conjecture:}\\
+The formula for $c(n)$ for a natural number $n$ is $2^{n - 1}$. \\
+
+\underline{Base Case:} \\
+Let $S(n)$ be the statement that for any natural number $n$, the number of compositions is defined by $c(n) = 2^{n - 1}$ where compositions of $n + 1$ can be constructed by taking the compositions of $n$ and:\\
+A. adding $1$ to the last number of each ordered list \\
+B. appending $1$ to each ordered list. \\
+
+$S(1) = 2^{0} = 1$ and for 1, there is only 1 composition, $\{1\}$. \\
+
+Further checking: $S(2) = 2^(1) = 2$ and for 2, there are two compositions, $\{2\}$ and $\{1, 1\}$. \\
+$\{2\}$ can be acquired from adding 1 to $\{1\}$ and $\{1, 1\}$ can be obtained by appending 1 to $\{1\}$.\\
+
+\underline{Induction Step:} \\
+Suppose that $S(n)$ is true, prove for $S(n + 1)$ ie for any natural number $n + 1$, the number of compositions is defined by $c(n + 1) = 2^n$ and that the way compositions are constructed as stated in the base case.\\
+
+For $n + 1$, $c(n + 1) = 2^n = 2*2^{n - 1}$, which is $2*c(n)$. To see that this is true, we have to consider how we construct the different compositions for $n + 1$ from the compositions of $n$. \\
+
+As stated above, the compositions of $n + 1$ are obtained from the composition of $n$ by adding $1$ to the last number of each ordered list or by appending $1$ to each ordered list. By taking all compositions of $n + 1$, we see that each ordered list (composition) has to either end in a 1 or an integer $k \mid k > 1$. \\
+
+If the composition ended in a $1$, then we know it followed rule B. If the composition ended in a $k > 1$, we know that it followed rule A. As both rules are followed, $n + 1$ has exactly twice the amount of compositions as $n$ \\
+
+Hence, for any natural number $n$, the number of compositions is defined by $c(n) = 2^{n - 1}$.
+
+\end{problem}
+
+\end{document}
