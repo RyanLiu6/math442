@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphics, rotating}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand\vec{\mathbf}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+\newtheorem{solution}{}
+\title{Math 442 Homework 2}
+\date{}
+
+%\renewcommand{\bigskip}{\vfill}
+
+\begin{document}
+%\vspace*{-1.2in}
+%
+%
+\maketitle
+%
+\vspace{-16 mm}
+\begin{itemize}
+\item Due Thursday January 17th at start of class.
+%
+\item If your homework is longer than one page, {\bf staple} the pages together, and put your name on each sheet of paper.
+%
+\item {\bf Collaboration Policy}: You are welcome (and encouraged) to work on the homework in groups. However, each student must write up the homework on their own, and must use their own wording (i.e.~don't jusy copy the solutions from your friend). If you do collaborate with others, please list the name of your collaborators at the top of the homework.
+
+\item You are encouraged (though not required) to type up your solutions. If you choose to do this, I strongly recommend that you use the typesetting software LaTeX. LaTeX is used by the entire mathematics community, and if you intend to go into math, you’ll need to learn it sooner or later. ``The Not So Short Introduction to LaTeX'' is a good place to start. This guide can be found at http://tug.ctan.org/info/lshort/english/lshort.pdf . You can also download the .tex source file for this homework and take a look at that.
+
+\item Each homework problem should be correct as stated. Occasionally, however, I might screw something up and give you an impossible homework problem. If you believe a problem is incorrect, please email me. If you are right, the first person to point out an error will get +1 on that homework, and I will post an updated version. 
+\end{itemize}
+
+
+
+\begin{problem}
+The local council in K\"onigsberg eventually decide to demolish one bridge. Does there exist  a bridge they can demolish so the citizens can find a route through the town crossing each bridge only once and \emph{not} finish up where they started? Explain your answer.
+\end{problem}
+
+
+\begin{problem}
+Show that a knight can tour each square on a $3\times 4$ chessboard -- though without finishing at the starting square.
+\end{problem}
+
+
+
+\begin{problem}
+Write down the expression given by the following parse tree.\\
+\centerline{\includegraphics[scale=0.4, angle= 270]{2019figs/bigparsetree.pdf}}
+\end{problem}
+
+
+\begin{problem}
+Consider a graph with five vertices and all $\binom{5}{2} = 10$ edges between the vertices. Color the edges red and blue so that there does not exist a monochromatic triangle. 
+\end{problem}
+
+\begin{problem}
+In a party of 6 people is it true that  either there exists 4 people  who all do know each other or there exists 4 people who all do not know each other? Justify your answer.
+\end{problem}
+
+\begin{problem}
+Prove that every (simple) graph with at least two vertices contains 2 vertices with the same degree.
+\end{problem}
+
+\end{document}
