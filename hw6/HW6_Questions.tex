@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphics, rotating}
+\usepackage{tikz}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand\vec{\mathbf}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+\newtheorem{solution}{}
+\title{\vspace{-2.0cm}Math 442 Homework 6}
+\date{}
+
+%\renewcommand{\bigskip}{\vfill}
+
+\begin{document}
+%\vspace*{-1.2in}
+%
+%
+\maketitle
+%
+\vspace{-16 mm}
+\begin{itemize}
+\item Due Thursday February 14 at start of class.
+%
+\item If your homework is longer than one page, {\bf staple} the pages together, and put your name on each sheet of paper.
+%
+\item {\bf Collaboration Policy}: You are welcome (and encouraged) to work on the homework in groups. However, each student must write up the homework on their own, and must use their own wording (i.e.~don't jusy copy the solutions from your friend). If you do collaborate with others, please list the name of your collaborators at the top of the homework.
+
+\item You are encouraged (though not required) to type up your solutions. If you choose to do this, I strongly recommend that you use the typesetting software LaTeX. LaTeX is used by the entire mathematics community, and if you intend to go into math, you’ll need to learn it sooner or later. ``The Not So Short Introduction to LaTeX'' is a good place to start. This guide can be found at http://tug.ctan.org/info/lshort/english/lshort.pdf . You can also download the .tex source file for this homework and take a look at that.
+
+\item Each homework problem should be correct as stated. Occasionally, however, I might screw something up and give you an impossible homework problem. If you believe a problem is incorrect, please email me. If you are right, the first person to point out an error will get +1 on that homework, and I will post an updated version. 
+\end{itemize}
+\begin{problem}
+Let $G$ and $H$ be graphs. $H$ is called a maximal reduction of $G$ if $H$ is homeomorphic to $G$, and $H$ has no vertices of degree two. Prove that two graps $G_1$ and $G_2$ are homeomorphic if and only if their maximal reductions are isomorphic.  
+\end{problem}
+
+\begin{problem}
+Which of the two graphs below is planar? For the one that is give a planar embedding. For the one that isn't find a subgraph homeomorphic to $K_5$ or $K_{3,3}$.\\
+\centerline{\includegraphics[angle = -90]{2019figs/planarandnot2006.pdf}}
+\end{problem}
+
+\begin{problem}
+Let $G_1$ and $G_2$ be two homeomorphic graphs. Let $G_1$ have $n_1$ vertices and $m_1$ edges, and let $G_2$ have $n_2$ vertices and $m_2$ edges. Show that $m_1-n_1=m_2-n_2$.
+\end{problem}
+
+\begin{problem} An equivalent definition of a \emph{polyhedral graph} is that it is a simple connected planar graph where every vertex has degree at least 3.
+
+\
+
+\begin{center}Prove that no polyhedral graph with exactly 24 edges and 8 faces can exist.\end{center}
+\end{problem}
+
+
+
+
+
+\begin{problem}
+The \emph{line graph} $L(G)$ of a simple graph $G$ is the graph whose vertices are in one-to-one correspondence with the \emph{edges} of $G$, and two vertices in $L(G)$ are adjacent if and only if the corresponding edges in $G$ meet at a vertex. Prove that if a simple graph $G$ is regular of degree $k>0$, then $L(G)$ is regular of degree $2k-2$. 
+\end{problem}
+
+\begin{problem}
+Given a simple graph $G$ with vertices $v_1, \ldots , v_n$, prove that the number of edges in $L(G)$ is
+$$\sum _{i=1} ^n \frac{d_i(d_i - 1)}{2}$$where $d_i$ is the degree of vertex $v_i$ for $1\leq i \leq n$.
+\end{problem}
+
+\begin{problem}
+For every $n\geq 3$ find a graph $G$ whose line graph $L(G)=K_n$. Explain your answer.
+\end{problem}
+
+\end{document}
