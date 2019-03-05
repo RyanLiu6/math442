@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphics, rotating}
+\usepackage{tikz}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand\vec{\mathbf}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+\newtheorem{solution}{}
+\title{\vspace{-2.0cm}Math 442 Homework 7}
+\date{}
+
+%\renewcommand{\bigskip}{\vfill}
+
+\begin{document}
+%\vspace*{-1.2in}
+%
+%
+\maketitle
+%
+\vspace{-16 mm}
+\begin{itemize}
+\item Due Thursday March 7 at start of class.
+%
+\item If your homework is longer than one page, {\bf staple} the pages together, and put your name on each sheet of paper.
+%
+\item {\bf Collaboration Policy}: You are welcome (and encouraged) to work on the homework in groups. However, each student must write up the homework on their own, and must use their own wording (i.e.~don't jusy copy the solutions from your friend). If you do collaborate with others, please list the name of your collaborators at the top of the homework.
+
+\item You are encouraged (though not required) to type up your solutions. If you choose to do this, I strongly recommend that you use the typesetting software LaTeX. LaTeX is used by the entire mathematics community, and if you intend to go into math, you’ll need to learn it sooner or later. ``The Not So Short Introduction to LaTeX'' is a good place to start. This guide can be found at http://tug.ctan.org/info/lshort/english/lshort.pdf . You can also download the .tex source file for this homework and take a look at that.
+
+\item Each homework problem should be correct as stated. Occasionally, however, I might screw something up and give you an impossible homework problem. If you believe a problem is incorrect, please email me. If you are right, the first person to point out an error will get +1 on that homework, and I will post an updated version. 
+\end{itemize}
+
+\begin{problem}
+Prove that for each $k\geq 2$, the set of $k$-colourable graphs is not minor-closed. 
+\end{problem}
+
+\begin{problem}
+Consider the following simple graph $G=(V,E)$ with infinitely many(!) vertices. The vertices of $G$ are the points in the plane $\mathbb{R}^2$. Two vertices are adjacent if their (Euclidean) distance is 1. Prove that $G$ is 7-colourable. 
+
+Hint: Consider a honeycomb pattern.
+
+\end{problem} 
+
+
+\begin{problem}
+(Without using Brooks' Theorem!) Prove any graph without loops where all the vertices have degree $\leq 3$ is $4$-colourable. Give an example of a plane graph in which no 4 vertices are all adjacent (that is, it does not contain $K_4$ as a subgraph), but which is 4-chromatic.
+\end{problem}
+
+\begin{problem}
+Calculate the chromatic polynomials of the two graphs below. Write your answer as a product of factors.
+
+\begin{figure}[h]\centerline{\includegraphics[scale=0.5, angle= 0]{2019figs/chrompol5.pdf}}
+\end{figure}
+\end{problem}
+
+\begin{problem}
+The \emph{windmill graph} $Wd(n,N)$ on $N(n-1) + 1$ vertices is the connected simple graph formed by taking $N$ copies of $K_n$ and joining them at a common vertex. Some examples are above.
+
+\
+
+\begin{figure}[!h]\centerline{\includegraphics[scale=0.4, angle= 0]{2019figs/windmill.pdf}}
+\end{figure}
+
+
+Prove the chromatic polynomial of the windmill graph $Wd(n, N)$ is $k\prod _{i=1} ^{n-1} (k-i)^N$.
+\end{problem} 
+
+\end{document}
