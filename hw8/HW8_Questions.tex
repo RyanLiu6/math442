@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphics, rotating}
+\usepackage{tikz}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand\vec{\mathbf}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+\newtheorem{solution}{}
+\title{\vspace{-2.0cm}Math 442 Homework 8}
+\date{}
+
+%\renewcommand{\bigskip}{\vfill}
+
+\begin{document}
+%\vspace*{-1.2in}
+%
+%
+\maketitle
+%
+\vspace{-16 mm}
+\begin{itemize}
+\item Due Thursday March 14 at start of class.
+%
+\item If your homework is longer than one page, {\bf staple} the pages together, and put your name on each sheet of paper.
+%
+\item {\bf Collaboration Policy}: You are welcome (and encouraged) to work on the homework in groups. However, each student must write up the homework on their own, and must use their own wording (i.e.~don't jusy copy the solutions from your friend). If you do collaborate with others, please list the name of your collaborators at the top of the homework.
+
+\item You are encouraged (though not required) to type up your solutions. If you choose to do this, I strongly recommend that you use the typesetting software LaTeX. LaTeX is used by the entire mathematics community, and if you intend to go into math, you’ll need to learn it sooner or later. ``The Not So Short Introduction to LaTeX'' is a good place to start. This guide can be found at http://tug.ctan.org/info/lshort/english/lshort.pdf . You can also download the .tex source file for this homework and take a look at that.
+
+\item Each homework problem should be correct as stated. Occasionally, however, I might screw something up and give you an impossible homework problem. If you believe a problem is incorrect, please email me. If you are right, the first person to point out an error will get +1 on that homework, and I will post an updated version. 
+\end{itemize}
+
+\begin{problem}  Let $G$ be a simple graph with $n$ vertices and $e$ edges. Prove that the coefficient in $P_G(k)$ of $k^n$ is 1 and of $k^{n-1}$ is $-e$.
+\end{problem}
+
+\begin{problem}  Let $G$ be a simple graph. Prove that the chromatic polynomial $P_G(k)$ is the product of the chromatic polynomials of its connected components. 
+\end{problem}
+
+\begin{problem} 
+For a simple connected graph $G$ with $n$ vertices, prove that  $\chi (G) = n$ if and only if $G=K_n$.
+\end{problem}
+
+\begin{problem}
+Let $G$ be a simple graph with $n$ vertices. Prove that the coefficients of the chromatic polynomial $P_G(k)$ alternate in sign, that is
+$$P_G(k) = c_nk^n-c_{n-1}k^{n-1}+\cdots +(-1)^nc_0$$ for $c_0, \ldots , c_{n} \geq 0$.
+\end{problem}
+
+
+\begin{problem}
+Try to prove the four colour theorem by adapting the proof of the five colour theorem from class. At what point does the proof fail?
+\end{problem}
+
+
+
+\begin{problem}
+A graph $G$ is \emph{k-critical} if $\chi(G)=k$ and the deletion of any vertex yields a graph with a smaller chromatic number. Prove that if $G$ is $k$-critical then every vertex has degree at least $k-1$.\end{problem}
+
+\end{document}

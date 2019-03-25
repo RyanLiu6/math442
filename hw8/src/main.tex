@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm,epsf, graphicx, rotating}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{float}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\addtolength{\textheight}{1in}
+
+\renewcommand\theenumi{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi)}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand\vec{\mathbf}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE, RO]{Ryan Liu}
+
+\theoremstyle{definition}
+\newtheorem{problem}{}
+
+\author{Ryan Liu}
+\title{MATH 442 Homework 8}
+\begin{document}
+
+\begin{center}
+{\huge MATH 442 \par}
+{\Large Homework  8  \par}
+{\normalsize Name: Ryan Zhuo Lun Liu \par}
+{\normalsize Student Number: 30328141 \par}
+{\normalsize Collaborator: Robert Benjamin Lang \par}
+\end{center}
+
+\begin{problem} \underline{Answer:}
+\begin{proof} 
+The coefficient of $k^n$ will be proved directly.\\
+
+Consider the vertices of $G$, and whether they are connected or not, will contribute to $P_G(k)$. At most, they will contribute $k$ possibilities, and at worst, will contribute $k - n + 1$ possibilities. In either case, $P_G(k)$, the product of the possibilities for all vertices would produce a monic polynomial - the polynomial where the leading coefficient is 1. \\
+
+The coefficient of $k^{n - 1}$ will be proved by strong induction on the number of edges, $e$. \\
+
+\underline{Base Case:} $e = 0$ and $P_G(k) = k^n$, which satisfies the condition. \\
+\underline{Inductive Step:} Suppose the statement is true for all graphs with $\leq e$ edges. Let $G = (V, E)$ be a graph with $e + 1$ edges. \\
+
+Let $x \in E$ and consider the graphs $G - x$ and $G/x$. Note that $G - x$ has $e$ edges and $G/x$ has $n - 1$ vertices and at most $e$ edges. Applying the inductive hypothesis gives us: \\
+
+$P_{G - x}(k) = k^n - (e)k^{n - 1} + ...$ \\
+$P_{G/x}(k) = k^{n - 1} + + ...$ \\
+
+By the Deletion-Contraction Theorem, we know that $P_G(k) = P_{G - x}(k) - P_{G/x}(k)$: \\
+
+$P_G(k) = k^n - (e + 1)k^{n - 1} + ...$ \\
+
+Therefore, by strong induction, the result holds. 
+\end{proof}
+\end{problem}
+
+\begin{problem} \underline{Answer:}
+\begin{proof}
+Consider a simple graph $G$ that is disconnected and that $G$ has $N$ distinct connected components, and let $H$ represent the set of connected components. We see that for any $h \in H$, we can colour $h$ regardless of the colouring of the other connected components. \\
+
+Thus, $P_G(k) = \prod_{i = 1}^{N} P_{h_i}(k)$, or the product of the chromatic polynomial of $G$'s connected components.
+\end{proof}
+\end{problem}
+
+\begin{problem} \underline{Answer:} 
+\begin{proof} The statement, $\chi(G) = n$ iff $G = K_n$ will be proved directly both ways. \\
+
+$\rightarrow$ Suppose that $\chi(G) = n$, and consider a graph $G$ with $n$ vertices. Since the chromatic number of $G$ is $n$, then at minimum, it takes $n$ colours to colour $G$. This would only occur if every vertex is adjacent to every other vertex, forcing us to use $n$ colours. This is also followed directly by Brook's Theorem. \\
+
+$\leftarrow$ Suppose $G = (V, E) = K_n$ and consider a vertex $v \in V$. Since it is the complete graph, $v$ must be adjacent to every other vertex $u \in V - v$, meaning $v$ has a degree of $n - 1$. Now, suppose $v$ is coloured $c_1$. In order for $G$ to have a proper colouring, every vertex adjacent to $v$ must be coloured $c_1$. But as $G = K_n$, the above scenario extends to all other vertices and we would need $n$ colours to properly colour $G$.
+\end{proof}
+\end{problem}
+
+\begin{problem} \underline{Answer:} 
+\begin{proof} This will be proved directly using the Binomial Expansion. \\
+
+The chromatic polynomial, $P_G(k)$, is the product of the possible ways to colour a graph. One way to represent this is $(k - 0)(k - 1)(k - 2) ... (k - n + 1)$. This can also be presented by $\prod_{i = 0}^{n + 1} k - i$. 
+As we are only concerned with the signs of the chromatic polynomial, we can disregard $i$ and simplify the polynomial to $(k - \beta)^n$. Let's call this $P_{G_s}(k)$, the sign chromatic polynomial. \\
+
+We can expand $(k - \beta)^n$ using the binomial expansion to give us $\sum_{i = 0}^{n} {{n \choose i} (k^{n - i})(-\beta)^i} = \sum_{i = 0}^{n} {{n \choose i} (k^{n - i})(\beta)^i(-1)^i}$. \\
+
+We see that each term in the expansion has $(-1)^i$, which alternates in sign. Therefore, each term in $P_G(s)$ also alternates in sign.
+\end{proof}
+\end{problem}
+
+\begin{problem} \underline{Answer:} 
+\begin{proof} Following the proof of the five colour theorem from class, the proof for four colour theorem breaks at one of the first assumption. \\
+
+In the proof of the five colour theorem, we assumed that every simple planar graph has at least one vertex of at most degree $5$. However, we cannot directly assume this for the four colour theorem and state that every simple planar graph has at least one vertex of at most degree $4$.
+One contradiction of the assumption is the icosahedral graph, which is a simple planar graph that does not have a vertex of at most degree $4$.
+\end{proof}
+\end{problem}
+
+\begin{problem} \underline{Answer:}
+\begin{proof} The statement, if $G$ is $k$-critical then every vertex has degree at least $k - 1$ will be proved by contradiction. \\
+
+Suppose that $G$ is $k$-critical and that it has a vertex $v$ whose degree is $< k - 1$. If we remove $v$, the graph $G - v$ is $k - 1$ colourable as each vertex has degree at least $k - 1$. \\
+
+Next, we want to add $v$ back into the graph, and since $v$ has degree $< k - 1$, there is at least one free colour we can assign it. Thus, the graph $G$ is $k - 1$ colourable. Hence, $G$ is not $k$-critical and we have arrived at a contradiction.
+\end{proof}
+\end{problem}
+\end{document}
